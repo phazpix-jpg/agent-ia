@@ -1,0 +1,59 @@
+# Dependências
+node_modules/
+
+# Segredos / config local — nunca commitar (use .env.example como modelo)
+.env
+
+# Configuração local do assistente — contém caminhos absolutos da máquina do dev
+.claude/settings.local.json
+
+# Vocabulário organizacional do cliente (workstreams, países, apelidos) — nunca no repositório
+# (modelo versionado: .vaper/organization.exemplo.json)
+.vaper/organization.json
+
+# Clones efêmeros de repos externos para análise (convenção VAPER — feat-021)
+tmp/
+
+# Métricas locais do ritual diário (cost/snapshots por dia — feat-020)
+.vaper/metrics/
+
+# Work items — artefatos locais, em desenvolvimento e encerrados (só os READMEs das pastas)
+# (inclui os diretórios temporários por item: <Tipo>_<id>/logs/ e <Tipo>_<id>/checkpoints/,
+#  gravados por task-logger e task-checkpoint — debugging/recovery, nunca commitados)
+in-development/*
+!in-development/README.md
+done/*
+!done/README.md
+
+# Rede de segurança: logs/checkpoints por task (caso fiquem fora dessas pastas — fallback)
+**/logs/
+**/checkpoints/
+.vaper/metrics/task-logs/
+.vaper/metrics/task-checkpoints/
+
+# Tasks locais
+TASKS/
+
+# Spike de exploração docx/TP (scripts + outputs locais; não é runtime — feat-007)
+.vaper/_spike/
+
+# Planejamento diário local (pasta pessoal de trabalho — nunca commitada)
+workday/
+
+# Rascunhos efêmeros de trabalho (scripts/dumps de análise; nunca runtime, nunca commitados)
+scratch/
+scratch_pr/
+
+# Backlog de FS do cliente — documentos recebidos, nunca commitados (só o README da pasta)
+backlog/*
+!backlog/README.md
+
+# Template corporativo do cliente (marca/logos) — fornecido localmente, nunca commitado
+.vaper/templates/*.docx
+.vaper/templates/*.pdf
+
+# Conexão SAP/ADT — host, mandante e sessão são do ambiente, nunca do repositório
+# (modelos versionados: sistemas.exemplo.json / destinos.exemplo.json)
+.lib/adt/sistemas.json
+.lib/adt/destinos.json
+.lib/adt/.sessao.json

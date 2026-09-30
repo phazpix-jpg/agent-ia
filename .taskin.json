@@ -1,0 +1,6 @@
+{
+  "version": "1.0.3",
+  "automation.level": "autopilot",
+  "provider.type": "fs",
+  "provider.config.tasksDir": "TASKS"
+}

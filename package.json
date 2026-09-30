@@ -1,0 +1,27 @@
+{
+  "name": "sap-accelerate",
+  "private": true,
+  "description": "SAP delivery accelerator — VAPER cycle CLI, SAP/ABAP agents and an ADT REST client. Client-agnostic base.",
+  "packageManager": "pnpm@11.6.0",
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11"
+  },
+  "scripts": {
+    "task": "node .vaper/task-cli/index.js",
+    "test": "node --test \".vaper/task-cli/tests/*.test.js\"",
+    "test:adt": "vitest run --dir .lib/adt",
+    "test:all": "npm run test && npm run test:adt"
+  },
+  "dependencies": {
+    "@turbodocx/html-to-docx": "^1.22.0",
+    "docx-templates": "^4.15.0",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.12.0",
+    "markdown-it": "^14.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.0"
+  }
+}
